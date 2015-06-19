@@ -1,0 +1,5 @@
+C:\DevSource\Tamu\GeoInnovation\ShapefileReaders\ExtendedCatfoodShapefileReader\src\Main\obj\Release\ShapefileReaders.ExtendedCatfoodShapefileReader.csprojResolveAssemblyReference.cache
+C:\DevBuild\Tamu\GeoInnovation\ShapefileReaders\ExtendedCatfoodShapefileReader\build\1.0.0\release\Tamu.GeoInnovation.ShapefileReaders.ExtendedCatfoodShapefileReader.dll
+C:\DevBuild\Tamu\GeoInnovation\ShapefileReaders\ExtendedCatfoodShapefileReader\build\1.0.0\release\Tamu.GeoInnovation.ShapefileReaders.ExtendedCatfoodShapefileReader.pdb
+C:\DevSource\Tamu\GeoInnovation\ShapefileReaders\ExtendedCatfoodShapefileReader\src\Main\obj\Release\Tamu.GeoInnovation.ShapefileReaders.ExtendedCatfoodShapefileReader.dll
+C:\DevSource\Tamu\GeoInnovation\ShapefileReaders\ExtendedCatfoodShapefileReader\src\Main\obj\Release\Tamu.GeoInnovation.ShapefileReaders.ExtendedCatfoodShapefileReader.pdb
