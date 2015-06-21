@@ -1,5 +1,0 @@
-C:\Dev\VS2008DotNetDevelopment\USC\GISResearchLab\Common\Shapefiles\ShapefileReaders\build\v1.0\bin\AnyCPU\release\USC.GISResearchLab.Common.Shapefiles.ShapefileReaders.dll
-C:\Dev\VS2008DotNetDevelopment\USC\GISResearchLab\Common\Shapefiles\ShapefileReaders\build\v1.0\bin\AnyCPU\release\USC.GISResearchLab.Common.Shapefiles.ShapefileReaders.pdb
-C:\Dev\VS2008DotNetDevelopment\USC\GISResearchLab\Common\Shapefiles\ShapefileReaders\src\obj\Release\Common.Shapefiles.ShapefileReaders.csprojResolveAssemblyReference.cache
-C:\Dev\VS2008DotNetDevelopment\USC\GISResearchLab\Common\Shapefiles\ShapefileReaders\src\obj\Release\USC.GISResearchLab.Common.Shapefiles.ShapefileReaders.dll
-C:\Dev\VS2008DotNetDevelopment\USC\GISResearchLab\Common\Shapefiles\ShapefileReaders\src\obj\Release\USC.GISResearchLab.Common.Shapefiles.ShapefileReaders.pdb
