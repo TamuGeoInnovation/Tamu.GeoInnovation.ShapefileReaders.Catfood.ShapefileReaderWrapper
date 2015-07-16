@@ -244,82 +244,41 @@ namespace USC.GISResearchLab.Common.Shapefiles.ShapefileReaders
 
                            
                             ShapePolygon orig = (ShapePolygon)shape;
-                            sqlGeographyPolygons = new List<Polygon>();
+                            string here = "";
+                            sqlGeography = orig.SqlGeography;
+                            string here2 = "";
+                            //sqlGeographyPolygons = new List<Polygon>();
 
-                            // only process shapes that have less than 25 parts - others indicate an error in the shape or a shape that covers too large of an area anywy
-                            if (orig.Parts.Count < 25)
-                            {
-                                foreach (PointD[] points in orig.Parts)
-                                {
-                                    poly = new Polygon();
-                                    foreach (PointD point in points)
-                                    {
-                                        poly.AddPoint(point.X, point.Y);
-                                    }
+                            //// only process shapes that have less than 25 parts - others indicate an error in the shape or a shape that covers too large of an area anywy
+                            //if (orig.Parts.Count < 25)
+                            //{
+                            //    foreach (PointD[] points in orig.Parts)
+                            //    {
+                            //        poly = new Polygon();
+                            //        foreach (PointD point in points)
+                            //        {
+                            //            poly.AddPoint(point.X, point.Y);
+                            //        }
 
-                                    sqlGeographyPolygons.Add(poly);
+                            //        sqlGeographyPolygons.Add(poly);
 
-                                    SqlGeography sqlGeog = poly.ToSqlGeography(SRID);
-                                    geographies.Add(sqlGeog);
-                                }
+                            //        SqlGeography sqlGeog = poly.ToSqlGeography(SRID);
+                            //        geographies.Add(sqlGeog);
+                            //    }
 
-                                sqlGeography = geographies[0];
-
-
-                                if (geographies.Count > 1)
-                                {
-
-                                    for (int i = 1; i < geographies.Count; i++)
-                                    {
-                                        sqlGeography = sqlGeography.STUnion(geographies[i]);
-                                    }
-                                }
+                            //    sqlGeography = geographies[0];
 
 
+                            //    if (geographies.Count > 1)
+                            //    {
 
-                                //SqlGeographyBuilder gb = new SqlGeographyBuilder();
-                                //gb.SetSrid(SRID);
+                            //        for (int i = 1; i < geographies.Count; i++)
+                            //        {
+                            //            sqlGeography = sqlGeography.STUnion(geographies[i]);
+                            //        }
+                            //    }
 
-                                //if (orig.Parts.Count > 1)
-                                //{
-                                //    gb.BeginGeography(OpenGisGeographyType.MultiPolygon);
-                                //}
-
-                                //foreach (PointD[] points in orig.Parts)
-                                //{
-                                //    gb.BeginGeography(OpenGisGeographyType.Polygon);
-
-                                //    double lon = points[0].X;
-                                //    double lat = points[0].Y;
-                                //    gb.BeginFigure(lat, lon);
-
-                                //    double lastLon = 0;
-                                //    double lastLat = 0;
-
-                                //    for (int i = 1; i < points.Length; i++)
-                                //    {
-                                //        lastLon = points[i].X;
-                                //        lastLat = points[i].Y;
-
-                                //        gb.AddLine(lastLat, lastLon);
-                                //    }
-
-                                //    // add the first points back in
-                                //    gb.AddLine(lat, lon);
-
-                                //    gb.EndFigure();
-                                //    gb.EndGeography();
-                                //}
-
-                                //if (orig.Parts.Count > 1)
-                                //{
-                                //    gb.EndGeography();
-                                //}
-
-                                //string geog = gb.ToString();
-
-                                //sqlGeography = gb.ConstructedGeography;
-                            }
+                            //}
 
                         }
                         catch (Exception e)
@@ -409,37 +368,37 @@ namespace USC.GISResearchLab.Common.Shapefiles.ShapefileReaders
                             sqlGeometryPolygons = new List<Polygon>();
 
                             ShapePolygon orig = (ShapePolygon)shape;
+                            sqlGeometry = orig.SqlGeometry;
+                            // // only process shapes that have less than 25 parts - others indicate an error in the shape or a shape that covers too large of an area anywy
+                            //if (orig.Parts.Count < 25)
+                            //{
+                            //    foreach (PointD[] points in orig.Parts)
+                            //    {
+                            //        poly = new Polygon();
+                            //        foreach (PointD point in points)
+                            //        {
+                            //            poly.AddPoint(point.X, point.Y);
+                            //        }
 
-                             // only process shapes that have less than 25 parts - others indicate an error in the shape or a shape that covers too large of an area anywy
-                            if (orig.Parts.Count < 25)
-                            {
-                                foreach (PointD[] points in orig.Parts)
-                                {
-                                    poly = new Polygon();
-                                    foreach (PointD point in points)
-                                    {
-                                        poly.AddPoint(point.X, point.Y);
-                                    }
+                            //        SqlGeometry sqlGeom = poly.ToSqlGeometry(SRID);
+                            //        sqlGeometries.Add(sqlGeom);
 
-                                    SqlGeometry sqlGeom = poly.ToSqlGeometry(SRID);
-                                    sqlGeometries.Add(sqlGeom);
+                            //        sqlGeometryPolygons.Add(poly);
+                            //    }
 
-                                    sqlGeometryPolygons.Add(poly);
-                                }
-
-                                sqlGeometry = sqlGeometries[0];
+                            //    sqlGeometry = sqlGeometries[0];
 
 
-                                if (sqlGeometries.Count > 1)
-                                {
+                            //    if (sqlGeometries.Count > 1)
+                            //    {
 
-                                    for (int i = 1; i < sqlGeometries.Count; i++)
-                                    {
-                                        sqlGeometry = sqlGeometry.STUnion(sqlGeometries[i]);
-                                    }
-                                }
+                            //        for (int i = 1; i < sqlGeometries.Count; i++)
+                            //        {
+                            //            sqlGeometry = sqlGeometry.STUnion(sqlGeometries[i]);
+                            //        }
+                            //    }
 
-                            }
+                            //}
 
 
                         }

@@ -84,12 +84,10 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Catfood.Shapefile, Version=1.40.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.SqlServer.Types, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\libs\Catfood.Shapefile.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft SQL Server\110\SDK\Assemblies\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.SqlServer.Types, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Reimers.Map, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\libs\Reimers.Map.dll</HintPath>
@@ -158,6 +156,10 @@
       <Project>{A7DF15F2-1210-4431-B223-A3A2810DC14A}</Project>
       <Name>Common.Data.Databases.Dev</Name>
       <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ShapefileReaders.Catfood.Shapefile.Custom2\Catfood.Shapefile\Catfood.Shapefile.csproj">
+      <Project>{57850E09-3AA5-4892-8AF9-56092AAC283D}</Project>
+      <Name>Catfood.Shapefile</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\ShapefileReaders.Reimers.Shp2KmlWrapper\src\Main\ShapefileReaders.Reimers.Shp2KmlWrapper.Dev.csproj">
       <Project>{4601E149-77F9-49D9-9DBA-8A90F2D3CC47}</Project>
