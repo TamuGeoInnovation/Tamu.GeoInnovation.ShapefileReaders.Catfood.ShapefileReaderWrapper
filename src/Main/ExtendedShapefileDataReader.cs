@@ -1,10 +1,10 @@
+using Microsoft.SqlServer.Types;
+using Reimers.Esri;
+using SQLSpatialTools;
 using System;
 using System.Data;
 using System.Data.Odbc;
 using System.IO;
-using Microsoft.SqlServer.Types;
-using Reimers.Esri;
-using SQLSpatialTools;
 using USC.GISResearchLab.Common.Core.KML;
 using USC.GISResearchLab.Common.Core.TextEncodings.Soundex;
 using USC.GISResearchLab.Common.Utils.Numbers;

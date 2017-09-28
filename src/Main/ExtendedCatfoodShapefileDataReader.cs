@@ -1,12 +1,12 @@
+using Catfood.Shapefile;
+using Microsoft.SqlServer.Types;
+using Reimers.Esri;
+using SQLSpatialTools;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Odbc;
 using System.IO;
-using Catfood.Shapefile;
-using Microsoft.SqlServer.Types;
-using Reimers.Esri;
-using SQLSpatialTools;
 using USC.GISResearchLab.Common.Core.KML;
 using USC.GISResearchLab.Common.Core.TextEncodings.Soundex;
 using USC.GISResearchLab.Common.Geometries.Polygons;
