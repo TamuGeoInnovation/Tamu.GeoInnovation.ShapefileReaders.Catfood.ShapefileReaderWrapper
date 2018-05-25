@@ -101,10 +101,6 @@
       <HintPath>..\..\libs\Reimers.Map.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="ShapefileReaders.Catfood.Shapefile.Custom, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\ShapefileReaders.Catfood.Shapefile.Custom\Catfood.Shapefile\bin\Debug\ShapefileReaders.Catfood.Shapefile.Custom.dll</HintPath>
-    </Reference>
     <Reference Include="SQLSpatialTools, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\libs\SQLSpatialTools.dll</HintPath>
@@ -189,10 +185,18 @@
       <Name>Common.Data.Databases.Dev</Name>
       <Private>False</Private>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\ShapefileReaders.Catfood.Shapefile.Custom\Catfood.Shapefile\ShapefileReaders.Catfood.Shapefile.Custom.csproj">
+      <Project>{57850e09-3aa5-4892-8af9-56092aac283d}</Project>
+      <Name>ShapefileReaders.Catfood.Shapefile.Custom</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\ShapefileReaders.Reimers.Shp2KmlWrapper\src\Main\ShapefileReaders.Reimers.Shp2KmlWrapper.Dev.csproj">
       <Project>{4601E149-77F9-49D9-9DBA-8A90F2D3CC47}</Project>
       <Name>ShapefileReaders.Reimers.Shp2KmlWrapper.Dev</Name>
       <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\ShapefileReaders.ShapefileReader\src\Main\ShapefileReaders.ShapefileReader.Dev.csproj">
+      <Project>{c7b8e0f2-ff55-4a11-8d51-dfcab7ff834e}</Project>
+      <Name>ShapefileReaders.ShapefileReader.Dev</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
