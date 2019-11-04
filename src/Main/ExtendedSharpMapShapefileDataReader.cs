@@ -89,17 +89,17 @@ namespace USC.GISResearchLab.Common.Shapefiles.ShapefileReaders
 
 
         public ExtendedSharpMapShapefileDataReader(string fileName)
-            : base(fileName) 
+            : base(fileName)
         {
 
             ShapeFileLayer = new Catfood.Shapefile.Shapefile(fileName);
             ShapeFileRowEnumerator = ShapeFileLayer.GetEnumerator();
 
-            
-                TotalShapes = ShapeFileLayer.Count;
-            
 
-           
+            TotalShapes = ShapeFileLayer.Count;
+
+
+
         }
 
         #endregion
@@ -115,7 +115,7 @@ namespace USC.GISResearchLab.Common.Shapefiles.ShapefileReaders
                 if (CurrentRecordIndex < TotalShapes && (FileDataReader.HasRows) && ShapeFileRowEnumerator.MoveNext())
                 {
                     CurrentRecordIndex++;
-                    
+
 
                     Shape shape = ShapeFileRowEnumerator.Current;
                     try
@@ -125,7 +125,7 @@ namespace USC.GISResearchLab.Common.Shapefiles.ShapefileReaders
                         {
                             throw new Exception("Error reading shapefile and DBF - record counts do no match. Total shapes: " + TotalShapes + ", total records: " + TotalRecordCount);
                         }
-                        
+
 
                         if (RecordsRead != null)
                         {
@@ -172,13 +172,13 @@ namespace USC.GISResearchLab.Common.Shapefiles.ShapefileReaders
                     //CurrentShapefileRecord.Shape.Read(ShapeReader);
                     //CurrentShapefileRecord.SteamedBytesRatio = (ShapeStream.Position - CurrentShapefileRecord.SteamedBytesRatio) / ShapeStream.Length;
 
-                    
+
 
                     SqlGeometry sqlGeometry = null;
                     SqlGeometry sqlGeometryProjected = null;
                     SqlGeography sqlGeography = null;
 
-                   
+
 
                     object[] temp = null;
 
@@ -230,11 +230,11 @@ namespace USC.GISResearchLab.Common.Shapefiles.ShapefileReaders
 
                         try
                         {
-                            
 
 
-                                temp[temp.Length - 1] = KMLGeometryTypes.GetKMLGeometryTypeName(KMLGeometryType.Polygon);
-                           
+
+                            temp[temp.Length - 1] = KMLGeometryTypes.GetKMLGeometryTypeName(KMLGeometryType.Polygon);
+
 
                             CurrentShapefileRecord.DataArray = temp;
                         }
@@ -256,7 +256,7 @@ namespace USC.GISResearchLab.Common.Shapefiles.ShapefileReaders
 
 
                     Polygon poly = null;
-                    
+
                     List<SqlGeography> geographies = new List<SqlGeography>();
 
                     if (IncludeSqlGeography)
@@ -264,7 +264,7 @@ namespace USC.GISResearchLab.Common.Shapefiles.ShapefileReaders
                         try
                         {
 
-                           
+
                             ShapePolygon orig = (ShapePolygon)shape;
 
                             foreach (PointD[] points in orig.Parts)
@@ -274,14 +274,14 @@ namespace USC.GISResearchLab.Common.Shapefiles.ShapefileReaders
                                 {
                                     poly.AddPoint(point.X, point.Y);
                                 }
-                                
+
                                 SqlGeography sqlGeog = poly.ToSqlGeography(SRID);
                                 geographies.Add(sqlGeog);
                             }
 
                             sqlGeography = geographies[0];
 
-                            
+
                             if (geographies.Count > 1)
                             {
 
@@ -290,7 +290,7 @@ namespace USC.GISResearchLab.Common.Shapefiles.ShapefileReaders
                                     sqlGeography = sqlGeography.STUnion(geographies[i]);
                                 }
                             }
-                           
+
 
 
                             //SqlGeographyBuilder gb = new SqlGeographyBuilder();
@@ -488,7 +488,7 @@ namespace USC.GISResearchLab.Common.Shapefiles.ShapefileReaders
                         }
                     }
 
-                    
+
                     if (ShouldIncludeGeometryProjected)
                     {
                         try
@@ -610,7 +610,7 @@ namespace USC.GISResearchLab.Common.Shapefiles.ShapefileReaders
                         }
                     }
 
-                    
+
 
                 }
                 else
@@ -618,7 +618,7 @@ namespace USC.GISResearchLab.Common.Shapefiles.ShapefileReaders
                     ret = false;
                     ShapeFileLayer.Close();
                     ShapeFileLayer.Dispose();
-                   
+
                 }
             }
             catch (Exception e)

@@ -179,7 +179,7 @@ namespace USC.GISResearchLab.Common.Shapefiles.ShapefileReaders
                     SqlGeometry sqlGeometryProjected = null;
                     SqlGeography sqlGeography = null;
 
-                   
+
 
                     object[] temp = null;
 

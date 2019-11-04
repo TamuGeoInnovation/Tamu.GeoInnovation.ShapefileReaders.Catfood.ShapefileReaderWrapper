@@ -13,14 +13,14 @@ using USC.GISResearchLab.Common.Geometries.Polygons;
 
 namespace USC.GISResearchLab.Common.Shapefiles.ShapefileReaders
 {
-	/// <summary>
-	/// Holds the data contained in an ESRI shapefile.
-	/// </summary>
-	public class CatfoodShapefileDataReader : AbstractDataReader
-	{
-		#region Fields
+    /// <summary>
+    /// Holds the data contained in an ESRI shapefile.
+    /// </summary>
+    public class CatfoodShapefileDataReader : AbstractDataReader
+    {
+        #region Fields
 
-	
+
         public string strError { get; set; }
 
         public BinaryReader ShapeReader { get; set; }
@@ -35,7 +35,7 @@ namespace USC.GISResearchLab.Common.Shapefiles.ShapefileReaders
         public IEnumerator<Catfood.Shapefile.Shape> ShapeFileRowEnumerator { get; set; }
 
 
-		#endregion
+        #endregion
 
         #region Events
 
@@ -56,7 +56,7 @@ namespace USC.GISResearchLab.Common.Shapefiles.ShapefileReaders
         /// </remarks>
         public event RecordsReadHandler RecordsRead;
 
-		#endregion
+        #endregion
 
         #region Properties
 
@@ -81,7 +81,7 @@ namespace USC.GISResearchLab.Common.Shapefiles.ShapefileReaders
                 return ret;
             }
         }
-        
+
 
 
         /// <summary>
@@ -106,20 +106,20 @@ namespace USC.GISResearchLab.Common.Shapefiles.ShapefileReaders
 
         #endregion
 
-		#region Constructor
+        #region Constructor
 
         public CatfoodShapefileDataReader()
         {
             strError = string.Empty;
         }
 
-		/// <summary>
-		/// Creates a new instance of a Shapefile
-		/// </summary>
-		/// <param name="FileName">The path to the .shp file in the shapefile to open.</param>
+        /// <summary>
+        /// Creates a new instance of a Shapefile
+        /// </summary>
+        /// <param name="FileName">The path to the .shp file in the shapefile to open.</param>
         public CatfoodShapefileDataReader(string fileName)
-		{
-			
+        {
+
             FileName = fileName;
 
             if (Path.GetExtension(FileName).ToLower() != ".shp")
@@ -128,21 +128,21 @@ namespace USC.GISResearchLab.Common.Shapefiles.ShapefileReaders
             }
 
             strError = string.Empty;
-		}
+        }
 
-		#endregion
+        #endregion
 
-		
 
-		#region Methods
 
-		#region Public
+        #region Methods
 
-		/// <summary>
-		/// Closes the stream objects and release all resources
-		/// </summary>
-		public void CloseStream()
-		{
+        #region Public
+
+        /// <summary>
+        /// Closes the stream objects and release all resources
+        /// </summary>
+        public void CloseStream()
+        {
 
             if (ShapeFileRowEnumerator != null)
             {
@@ -154,15 +154,15 @@ namespace USC.GISResearchLab.Common.Shapefiles.ShapefileReaders
                 ShapeFileLayer.Close();
                 ShapeFileLayer.Dispose();
             }
-         
+
             IsClosed = true;
-		}
-
-		
+        }
 
 
-		public override bool NextFeature()
-		{
+
+
+        public override bool NextFeature()
+        {
             bool ret = true;
             try
             {
@@ -408,12 +408,12 @@ namespace USC.GISResearchLab.Common.Shapefiles.ShapefileReaders
             return ret;
         }
 
-       
 
-		#endregion
 
-		
-		#endregion
+        #endregion
+
+
+        #endregion
 
         #region IDataReader Members
 
@@ -426,12 +426,12 @@ namespace USC.GISResearchLab.Common.Shapefiles.ShapefileReaders
 
         public override DataTable GetSchemaTable()
         {
-            
+
             try
             {
                 if (SchemaTable == null)
                 {
-                    
+
                     string fn = string.Format(@"{0}\{1}.dbf", Path.GetDirectoryName(FileName), Path.GetFileNameWithoutExtension(FileName));
                     if (File.Exists(fn))
                     {
@@ -463,7 +463,7 @@ namespace USC.GISResearchLab.Common.Shapefiles.ShapefileReaders
                             SchemaTable = FileDataReader.GetSchemaTable();
 
 
-                          
+
                         }
                     }
 
