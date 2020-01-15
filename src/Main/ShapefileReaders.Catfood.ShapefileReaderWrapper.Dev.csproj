@@ -92,8 +92,7 @@
       <HintPath>..\..\..\_RepoConfig\SolutionFiles\Dev\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data, Version=6.9.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\..\..\_RepoConfig\SolutionFiles\packages\MySql.Data.6.9.7\lib\net40\MySql.Data.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\..\..\_RepoConfig\SolutionFiles\Dev\packages\MySql.Data.6.9.7\lib\net45\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="Reimers.Map, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
